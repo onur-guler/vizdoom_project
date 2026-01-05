@@ -1,5 +1,5 @@
 # VizDoom Visual Survival: CMP4501 Project by Onur Sinan Güler
-![evo](https://github.com/user-attachments/assets/9e8df43b-9dd0-47fb-9451-9f1e3ad506bd)
+![evo](https://github.com/user-attachments/assets/6a3f9f22-f7e5-4182-b98c-1a1cbc70b2d4)
 
 
 # Running from host
@@ -38,7 +38,7 @@ Before starting any reinforcement learning stuff, I created my own environment a
 
 And here's our glorious random agent:
 
-https://github.com/user-attachments/assets/ba5ddd6a-102d-4cfc-a5c6-8f70b7127ebf
+https://github.com/user-attachments/assets/efe31756-529c-45e7-a342-488b03816b54
 
 
 
@@ -192,18 +192,21 @@ We use 2 networks, one policy network that will train and one target network to 
 
 At first setting the frame skip to anything higher than 1 felt like it would learn worse but the resulting agent didn't learn like I imagined and it was quite the opposite. The reason was I had to give the agent some time to see the results of its action, so setting frame skip to 4 worked out well. If we look at the graphs we can see the 1 frame skip model performs the worst overall.
 
-<img width="1064" height="772" alt="graph" src="https://github.com/user-attachments/assets/fdefc06d-2a60-40ea-8fea-197662ae428a" />
+<img width="1064" height="772" alt="graph" src="https://github.com/user-attachments/assets/eb9b55ea-63ab-42f2-b551-1d3c4c546172" />
+
 
 I will reference this graph multiple times throughout the remainder of the document.
 
 ## Resulting agent from 1 frame skip (Trained for 29k episodes)
 
-https://github.com/user-attachments/assets/467b2c44-b17b-4160-9abc-51bd606dae68
+https://github.com/user-attachments/assets/228ff07f-7493-49d3-94a4-70792659fb40
 
 
 ## Agent trained with 4 frame skip (Trained for 20k episodes)
 
-https://github.com/user-attachments/assets/d865caee-f58f-4c59-bc10-be6921edc2fd
+https://github.com/user-attachments/assets/7d4d6464-fafe-43a7-bc15-2650fafee1ae
+
+
 
 
 We can see if we train the agent with 4 frame skip even training it for 20k episodes we get a better result
@@ -211,16 +214,14 @@ If we continue training this agent we get a pretty good agent as a result
 
 ## Agent trained with 4 frame skip (Trained for 65k episodes)
 
-https://github.com/user-attachments/assets/11f148e4-e691-4347-be4f-8e60c8a6345c
-
+https://github.com/user-attachments/assets/6efd85aa-6be4-49c0-853c-8a978457f9ca
 
 
 Perfect, it's done right? That's what I tought but while I was messing with less trained agents I found that the agent does this
 
 ## Agent trained for 10k episodes
 
-https://github.com/user-attachments/assets/83201178-8bc0-4fa2-8fd9-0063678e9b31
-
+https://github.com/user-attachments/assets/914ee62c-78af-46f2-bd45-534c6ecc6b22
 
 
 It prefers waiting rather than moving or shooting. Since it gets the same reward no matter if it's moving or not and get's less punishment if it doesn't shoot (without killing the enemy) waiting seems as good as moving. To fix this I made it so that if it doesn't shoot in an episode at all, right before termination it get's a negative reward 1 lower than the punishment for shooting a bullet to encourage it to shoot more rather than waiting and doing nothing at all.
@@ -249,21 +250,20 @@ $$
 And this worked out really well, I got pretty good results for training it for only 6k episodes with a lower epsilon decay (0.995) to make it decay faster
 ## Agent trained with new Reward function for 6k episodes
 
-https://github.com/user-attachments/assets/fe40b2ab-b984-4afa-b30d-ac9853bf06ee
-
+https://github.com/user-attachments/assets/8bba7b33-b57f-4f0c-8ec1-812125223e88
 
 
 Than I upped the epsilon decay back to what it was and trained it
 ## Agent trained with new reward function for 10k episodes
 
-https://github.com/user-attachments/assets/c0ef9657-5bf5-4e73-a0c9-8ec002ae13c0
+https://github.com/user-attachments/assets/e4527b65-b065-4e5a-948d-0705ce86c0d7
 
 
 ## Agent trained with new reward function for 20k episodes
 
-https://github.com/user-attachments/assets/fdf9d226-e843-4143-93f4-bcaeae508e12
+https://github.com/user-attachments/assets/3aaeab49-0a63-4404-83bc-3e350ec3c810
 
 
 ## Agent trained with new reward function for 65k episodes
 
-https://github.com/user-attachments/assets/284c5b15-2ef2-42d8-b3ad-015141251b69
+https://github.com/user-attachments/assets/cee24de4-b851-408a-8b06-971d4b32c592
