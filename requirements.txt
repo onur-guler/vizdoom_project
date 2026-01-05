@@ -1,0 +1,11 @@
+./vizdoom
+scikit-image
+torch
+tqdm
+opencv-python
+gymnasium
+gymnasium[other]
+matplotlib
+numpy
+pyyaml
+tensorboard

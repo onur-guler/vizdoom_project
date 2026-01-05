@@ -1,0 +1,17 @@
+basic:
+  env_id: gymnasium_env/vizdoom_project-basic
+  replay_memory_size: 100000
+  mini_batch_size: 1
+  epsilon_init: 1 # How random is it (1 being fully random)
+  epsilon_decay: 0.99995 # How much it will decay
+  epsilon_min: 0.05 # The minimum 5% chance for randomness
+  network_sync_rate: 600
+  learning_rate: 0.0001
+  discount_factor: 0.99
+  fc1_nodes: 512
+  fc2_nodes: 512
+  nk_episode_saves: 1
+  mean_n: 100
+  render_episode_count: 10
+  env_make_params:
+    frame_skip: 4
