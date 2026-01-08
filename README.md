@@ -1,4 +1,4 @@
-# VizDoom Visual Survival: CMP4501 Project by Onur Sinan Güler
+# VizDoom Visual Survival: CMP4501 Project by Onur Sinan Güler, Eylül Çeren and Ferhan Çelik
 ![evo](https://github.com/user-attachments/assets/6a3f9f22-f7e5-4182-b98c-1a1cbc70b2d4)
 
 
